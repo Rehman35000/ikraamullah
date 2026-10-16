@@ -15,7 +15,7 @@ export const profile = {
   title: 'Full Stack Website & App Developer · AI Automation Expert',
   // Small mono badge shown above the hero heading
   badge: 'Open to SWE / Full-Stack / AI Automation roles',
-  location: 'Peshawar, Pakistan',
+  location: 'Islamabad, Pakistan',
   email: 'ikramullah35000@gmail.com',
   // Short bio — segments with `highlight: true` render in white
   bioSegments: [
