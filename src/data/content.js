@@ -147,6 +147,7 @@ export const certifications = [
     issuer: 'Anthropic · Claude Academy',
     year: '2026',
     icon: 'code',
+    image: '/certifications/mcp.jpg',
     url: 'https://academy.claude.com/verify/0a2215eb94c297e3f9a9db5346ca7c7b',
   },
   {
@@ -154,6 +155,7 @@ export const certifications = [
     issuer: 'Meta · Coursera',
     year: '2024',
     icon: 'award',
+    image: '/certifications/meta-frontend.svg',
     url: 'https://coursera.org',
   },
   {
@@ -161,6 +163,7 @@ export const certifications = [
     issuer: 'Amazon Web Services',
     year: '2024',
     icon: 'shieldCheck',
+    image: '/certifications/aws-cloud-practitioner.svg',
     url: 'https://aws.amazon.com/certification/',
   },
   {
@@ -168,6 +171,7 @@ export const certifications = [
     issuer: 'Google · Coursera',
     year: '2023',
     icon: 'badgeCheck',
+    image: '/certifications/google-data-analytics.svg',
     url: 'https://coursera.org',
   },
   {
@@ -175,6 +179,7 @@ export const certifications = [
     issuer: 'freeCodeCamp',
     year: '2022',
     icon: 'medal',
+    image: '/certifications/freecodecamp-web-design.svg',
     url: 'https://freecodecamp.org',
   },
 ];
