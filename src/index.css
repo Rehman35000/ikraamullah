@@ -1,0 +1,115 @@
+@import 'tailwindcss';
+
+/* Enable class-based dark mode (toggled on <html>) instead of the media query */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* ---------- Design tokens ---------- */
+@theme {
+  /* Fonts */
+  --font-sans: 'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: 'Space Grotesk', 'Inter', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  /* Accent palette */
+  --color-accent: #60a5fa; /* blue   */
+  --color-accent-2: #a855f7; /* purple */
+  --color-ink: #0a0a0f; /* near-black background */
+
+  /* Custom animations */
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-blink: blink 1s step-end infinite;
+  --animate-pulse-glow: pulse-glow 2.4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.55);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(96, 165, 250, 0);
+  }
+}
+
+/* ---------- Base ---------- */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    @apply bg-slate-50 text-slate-700 antialiased dark:bg-[#0a0a0f] dark:text-slate-400;
+    font-family: var(--font-sans);
+  }
+
+  /* Headings use the geometric display font */
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+    @apply tracking-tight;
+  }
+
+  /* Offset anchor targets so the floating navbar doesn't cover headings */
+  section[id] {
+    scroll-margin-top: 6.5rem;
+  }
+
+  ::selection {
+    @apply bg-blue-400/30;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full bg-slate-300 dark:bg-white/10;
+  }
+}
+
+/* ---------- Reusable utilities ---------- */
+@layer utilities {
+  /* Blue → purple gradient text */
+  .text-gradient {
+    @apply bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent;
+  }
+
+  /* Frosted glass surface with a thin border */
+  .glass {
+    @apply border border-slate-200/80 bg-white/70 backdrop-blur-xl
+      dark:border-white/10 dark:bg-white/[0.03];
+  }
+
+  /* Small rounded button/card with a soft blue glow on hover */
+  .glow-blue {
+    box-shadow: 0 10px 40px -12px rgba(96, 165, 250, 0.55);
+  }
+  .glow-purple {
+    box-shadow: 0 10px 40px -12px rgba(168, 85, 247, 0.55);
+  }
+}
